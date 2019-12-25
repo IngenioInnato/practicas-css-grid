@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+
+        /*INICIO*/
+
+    :root{
+        --azul: #4cc7bf;
+        --gris: #53606d;
+        --amarillo: #c2ed62;
+        --rojo: #f86868;
+        --rojo-oscuro: #c04b55;
+        --negro: #000;
+        --blanco: #fff;
+        --fuente: Arial, Helvetica, sans-serif;
+    }
+    html, body{
+        scroll-behavior: smooth; 
+        overflow-x:hidden;
+        list-style-position: inside;
+        font-family: var(--fuente);
+    }
+    /* @media (max-width: 575.98px) {  }
+    @media (max-width: 767.98px) {  }
+    @media (max-width: 991.98px) {  }
+    @media (max-width: 1199.98px) {  }
+    @media (min-width: 1200px) {  } */
+        /*grid.css*/
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-areas: "header    header  header  "
+                                 "sidebar-1 content sidebar-2"
+                                 "sidebar-1 content sidebar-2"
+                                 "widgets widgets widgets"
+                                 "footer    footer  footer";            
+        /*
+            líneas 
+                comienza y termina la grid explícita
+                implícita
+        */
+        }
+        .container .header{
+            /* Manera 1:
+            grid-colum-start:;
+            grid-column-end:;
+            
+               Manera 2: 
+            grid-column: start / end;
+            grid-column header
+            
+               Manera 3:
+            grid-area:row-start / colum-start / row-end / column-end;*/
+            grid-column: header;
+            background: var(--azul);
+        }
+        .container .content{
+            grid-area: content;
+            background: var(--rojo);
+        }
+        .container .sidebar-1{
+            grid-area: sidebar-1;
+            background: var(--rojo-oscuro);
+        }
+        .container .sidebar-2{
+            grid-area: sidebar-2;
+            background: var(--rojo-oscuro);
+        }
+        .container .widgets{
+            grid-area:  widgets;
+            background: var(--blanco);
+            color: var(--negro);
+        }
+        .container .footer{
+            grid-area: footer;
+            background: var(--gris);
+        }
+        /*========*/
+        html, body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eee;
+            color:#000;
+        }
+        .header{
+            font-size: 50px;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container{
+            width: 90%;
+            max-width: 1600px;
+            border: 10px solid #3e3e3e;
+            margin: auto;
+            font-size: 50px;
+            text-align:center;
+        }
+        .container > div {
+            display: block;
+            padding: 20px;
+            background: #2f89fc;
+            color: #fff;
+            box-shadow: 2px 2px 10px rgba(0,0,0,.25);
+        }
+    </style>
+</head>
+<body>
+    <p class="header">Css Grid - Areas</p>    
+    <div class="container">
+        <div class="header">1</div>
+        <div class="sidebar-1">2</div>
+        <div class="content">3</div>
+        <div class="sidebar-2">4</div>
+        <div class="widgets">5</div>
+        <div class="footer">6</div>
+    </div>
+</body>
+</html>
